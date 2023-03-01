@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-const StyledButton = styled.button`
+const StyledDemoButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,4 +23,4 @@ const StyledButton = styled.button`
   }
 `
 
-export default StyledButton
+export default StyledDemoButton

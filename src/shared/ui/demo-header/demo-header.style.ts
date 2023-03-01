@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-const StyledHeader = styled.div`
+const StyledDemoHeader = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -15,4 +15,4 @@ const StyledHeader = styled.div`
   font-family: sans-serif;
 `
 
-export default StyledHeader
+export default StyledDemoHeader
