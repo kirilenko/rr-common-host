@@ -7,6 +7,7 @@ const StyledHeader = styled.div`
   justify-content: center;
 
   min-height: 48px;
+  padding: 16px;
 
   color: white;
   background: mediumpurple;

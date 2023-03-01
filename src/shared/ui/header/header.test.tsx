@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react'
-import { describe, expect, test } from 'vitest'
+import userEvent from '@testing-library/user-event'
+import { describe, expect, test, vi } from 'vitest'
 
 import Header from '.'
 
@@ -19,4 +20,15 @@ describe('<Header />', () => {
       screen.getByText(/from remote host: rr-shared-host/i),
     ).toBeInTheDocument()
   })
+})
+
+it('Click the Vite logo', async () => {
+  // Example with the user event library
+  render(<Header title="test" />)
+  const user = userEvent.setup()
+
+  const spyAnchorTag = vi.spyOn(user, 'click')
+  await user.click(screen.getByAltText('Vite logo'))
+
+  expect(spyAnchorTag).toHaveBeenCalledOnce()
 })
