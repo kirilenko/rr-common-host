@@ -13,5 +13,10 @@ describe('<Header />', () => {
 
     const text = screen.getByText(/from remote host: rr-shared-host/i)
     expect(text.textContent).toBeTruthy()
+
+    expect(
+      // Get by text using the jest-dom matcher:
+      screen.getByText(/from remote host: rr-shared-host/i),
+    ).toBeInTheDocument()
   })
 })
