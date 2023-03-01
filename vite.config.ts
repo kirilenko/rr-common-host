@@ -30,4 +30,8 @@ export default defineConfig(({ mode }) => ({
       '@widgets': '/src/widgets',
     },
   },
+  test: {
+    environment: 'happy-dom',
+    globals: true,
+  },
 }))
