@@ -11,8 +11,8 @@
     "setup": "scripts/nvm-use.sh && pnpm i",
     "dev": "vite --port 3002 --strictPort",
     "lint:styles": "npx stylelint --fix 'src/**/**.{css,style.ts,style.tsx}'",
-    "lint:scripts": "eslint --fix 'src/**/**.{ts,tsx}'",
-    "format": "pnpm lint:styles && pnpm lint:scripts && scripts/postformat.sh",
+    "lint:scripts": "eslint --fix 'src/**/**.{ts,tsx}' './.*.cjs' './*.{cjs,ts}'",
+    "format": "pnpm lint:styles && pnpm lint:scripts && prettier --write ./*.{json,md} && scripts/postformat.sh",
     "build": "tsc && vite build",
     "preview": "npm run build && vite preview --port 3002 --strictPort"
   },

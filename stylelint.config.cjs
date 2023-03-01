@@ -9,6 +9,7 @@ const config = {
   ],
   overrides: [
     {
+      customSyntax: 'postcss-styled-syntax',
       files: [
         '**/*.js',
         '**/*.cjs',
@@ -17,7 +18,6 @@ const config = {
         '**/*.ts',
         '**/*.tsx',
       ],
-      customSyntax: 'postcss-styled-syntax',
     },
   ],
   plugins: ['stylelint-order'],
