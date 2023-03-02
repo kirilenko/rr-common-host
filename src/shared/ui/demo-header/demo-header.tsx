@@ -1,10 +1,12 @@
 import { FC } from 'react'
 
+import { DivProps } from '@shared/lib/html-props'
+
 import StyledDemoHeader from './demo-header.style'
 
-type Props = {
+type Props = DivProps<{
   title: string
-}
+}>
 const DemoHeader: FC<Props> = ({ title }) => (
   <StyledDemoHeader>
     <a href="#">
