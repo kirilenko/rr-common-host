@@ -14,6 +14,7 @@ export default defineConfig(({ mode }) => ({
     react(),
     federation({
       exposes: {
+        './app/providers': './src/app/providers',
         './shared/ui': './src/shared/ui',
       },
       filename: 'remote-entry.js',

@@ -10,7 +10,11 @@ const extendsDict = {
 }
 
 const rules = {
-  '@typescript-eslint/no-unused-expressions': 'off', // - for <condition> && <expression>
+  // For <condition> && <expression>:
+  '@typescript-eslint/no-unused-expressions': 'off',
+
+  // For defining function as a function-expression w/ type like 'const fn: DoIt = function () {}':
+  'func-names': 'off',
 
   'hooks/sort': [
     2,
@@ -38,8 +42,10 @@ const rules = {
     },
   ],
 
-  'import/no-extraneous-dependencies': 'off', // - for import in vite.config ets
+  // For import in vite.config ets:
+  'import/no-extraneous-dependencies': 'off',
 
+  // For local import only from fsd-index (features sliced design):
   'import/no-internal-modules': [
     'error',
     {
@@ -60,17 +66,22 @@ const rules = {
         '@widgets/**/*', // use @widgets/something only
       ],
     },
-  ], // - for local import only from fsd-index (features sliced design)
+  ],
 
-  'import/prefer-default-export': 'off', // - for reexport from index
+  // For reexport from index:
+  'import/prefer-default-export': 'off',
 
-  'jsx-a11y/anchor-is-valid': 'off', // - for using anchor w/ button together
+  // For using anchor w/ button together:
+  'jsx-a11y/anchor-is-valid': 'off',
 
-  'no-redeclare': 'off', // - for typescript fn-overloading
+  // For typescript fn-overloading:
+  'no-redeclare': 'off',
 
-  'no-restricted-exports': 'off', // - for export { default } from somewhere
+  // For export { default } from somewhere:
+  'no-restricted-exports': 'off',
 
-  'no-underscore-dangle': 'off', // - for typescript getters/setters
+  // For typescript getters/setters:
+  'no-underscore-dangle': 'off',
 
   'no-unused-vars': 'warn',
 
@@ -80,44 +91,50 @@ const rules = {
     { endOfLine: 'auto', usePrettierrc: true },
   ],
 
-  'react/display-name': 'off', // - for simple defining HOC as 'const withSomething = (Component) => (props) => <Component {...props} />'
+  // For simple defining HOC as 'const withSomething = (Component) => (props) => <Component {...props} />':
+  'react/display-name': 'off',
 
-  'react/function-component-definition': 'off', // - for defining component as a function-declaration
+  // For defining component as a function-declaration:
+  'react/function-component-definition': 'off',
 
   'react/jsx-filename-extension': [0],
 
-  'react/jsx-props-no-spreading': 'off', // - for props spreading in jsx
+  // For props spreading in jsx:
+  'react/jsx-props-no-spreading': 'off',
 
-  'react/jsx-uses-react': 'off', // - for removing React imports
+  // For removing React imports:
+  'react/jsx-uses-react': 'off',
 
-  'react/react-in-jsx-scope': 'off', // - for removing React imports
+  // For removing React imports:
+  'react/react-in-jsx-scope': 'off',
 
-  'react/require-default-props': 'off', // - disable SomeComponent.defaultProps defining
+  // Disable SomeComponent.defaultProps defining:
+  'react/require-default-props': 'off',
   'simple-import-sort/imports': [
     'warn',
     {
       groups: [
-        // External `react` packages come first.
+        // External `react` packages come first:
         ['^react', `^(?!${internalPackages}|\\./|\\.\\./|\\u0000)`],
 
-        // Imports w/o from.
+        // Imports w/o from:
         ['^\\u0000'],
 
-        // Internal packages.
+        // Internal packages:
         [
           `^(${internalPackages})(?!${styleExtensions})`,
 
-          // Parent imports. Put `..` last.
+          // Parent imports. Put `..` last:
           '^\\.\\.(?!/?$)',
           '^\\.\\./?$',
 
-          // Other relative imports. Put same-folder imports and `.` last.
+          // Other relative imports. Put same-folder imports and `.` last:
           '^\\./(?=.*/)(?!/?$)',
           '^\\.(?!/?$)',
           '^\\./?$',
         ],
 
-        // Style imports.
+        // Style imports:
         [`^.+${styleExtensions}`],
       ],
     },
