@@ -80,6 +80,8 @@ const rules = {
     { endOfLine: 'auto', usePrettierrc: true },
   ],
 
+  'react/display-name': 'off', // - for simple defining HOC as 'const withSomething = (Component) => (props) => <Component {...props} />'
+
   'react/function-component-definition': 'off', // - for defining component as a function-declaration
 
   'react/jsx-filename-extension': [0],
