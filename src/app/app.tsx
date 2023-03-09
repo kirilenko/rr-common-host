@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import { Global } from '@emotion/react'
 
+import { cnc } from '@shared/lib/class-name-creator'
 import { DemoButton, DemoHeader } from '@shared/ui'
 import { useEnvResolver, withProviders } from './providers'
 
@@ -13,7 +14,7 @@ const App: FC = () => {
   return (
     <>
       <Global styles={GlobalStyles} />
-      <StyledApp>
+      <StyledApp className={cnc('App')}>
         <DemoHeader title="shared.ui.header" />
         <DemoButton title="shared.ui.button" />
       </StyledApp>
