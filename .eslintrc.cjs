@@ -54,7 +54,7 @@ const rules = {
         '../*',
         '../**/*',
 
-        '@app/!(index.css)',
+        '@app/!(index.css|providers)',
         '@app/**/*',
 
         '@entities/**/*', // use @entities/something only
@@ -67,6 +67,9 @@ const rules = {
       ],
     },
   ],
+
+  // For import from remote packages (only for types):
+  'import/no-relative-packages': 'off',
 
   // For reexport from index:
   'import/prefer-default-export': 'off',
