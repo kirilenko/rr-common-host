@@ -2,12 +2,18 @@ import federation from '@originjs/vite-plugin-federation'
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 
+// For using env variables in config:
+// import { loadEnv } from 'vite'
+// export default defineConfig(() => {
+//   const env = loadEnv(mode, process.cwd(), '')
+//   ...
+// })
+
 export default defineConfig(({ mode }) => ({
   build: {
     cssCodeSplit: false,
     minify: mode === 'production',
     modulePreload: false,
-    sourcemap: mode !== 'production',
     target: 'esnext',
   },
   plugins: [
