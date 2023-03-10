@@ -18,7 +18,9 @@ const App: FC = () => {
         <DemoHeader title="shared.ui.header" />
         <DemoButton title="shared.ui.button" />
       </StyledApp>
-      <div style={{ display: 'none' }}>{getEnv('VITE_TIMESTAMP')}</div>
+      <div style={{ display: 'none' }}>{`${getEnv(
+        'VITE_TIMESTAMP',
+      )} / mode: ${getEnv('MODE')}`}</div>
     </>
   )
 }
