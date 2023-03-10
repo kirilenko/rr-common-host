@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { Global } from '@emotion/react'
 
-import { cnc } from '@shared/lib/class-name-creator'
+import { cnc } from '@shared/lib'
 import { DemoButton, DemoHeader } from '@shared/ui'
 import { useEnvResolver, withProviders } from './providers'
 

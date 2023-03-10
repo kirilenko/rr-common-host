@@ -1,18 +1,18 @@
 import { FC, useState } from 'react'
 
-import { cnc } from '@shared/lib/class-name-creator'
-import { ButtonProps } from '@shared/lib/html-props'
+import { ButtonProps, cnc } from '@shared/lib'
 
 import StyledDemoButton from './demo-button.style'
 
 type Props = ButtonProps<{
   title: string
 }>
-const DemoButton: FC<Props> = ({ title }) => {
+const DemoButton: FC<Props> = ({ title, ...buttonProps }) => {
   const [count, setCount] = useState(0)
 
   return (
     <StyledDemoButton
+      {...buttonProps}
       className={cnc('DemoButton')}
       onClick={() => setCount((p) => p + 1)}
     >

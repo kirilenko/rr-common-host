@@ -14,6 +14,7 @@ export default defineConfig(({ mode }) => ({
     cssCodeSplit: false,
     minify: mode === 'production',
     modulePreload: false,
+    sourcemap: mode !== 'production',
     target: 'esnext',
   },
   plugins: [
@@ -21,6 +22,7 @@ export default defineConfig(({ mode }) => ({
     federation({
       exposes: {
         './app/providers': './src/app/providers',
+        './shared/lib': './src/shared/lib',
         './shared/ui': './src/shared/ui',
       },
       filename: 'remote-entry.js',
