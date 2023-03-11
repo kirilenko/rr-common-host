@@ -14,7 +14,7 @@ export type EnvResolverProviderProps = PropsWithChildren<{
 
 export type UseEnvResolver = () => EnvResolverContextValue
 
-export type WithEnvResolver<Props extends {}> = (
+export type WithEnvResolverProvider<Props extends {}> = (
   this: { env: ImportMetaEnv },
   Component: ComponentType<Props>,
 ) => ComponentType<Props>

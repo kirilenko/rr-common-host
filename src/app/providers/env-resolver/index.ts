@@ -1,3 +1,6 @@
 export { useEnvResolver } from './use.env-resolver'
-export { withEnvResolver } from './with.env-resolver'
-export type { UseEnvResolver, WithEnvResolver } from './env-resolver.model'
+export { withEnvResolverProvider } from './with.env-resolver.provider'
+export type {
+  UseEnvResolver,
+  WithEnvResolverProvider,
+} from './env-resolver.model'
