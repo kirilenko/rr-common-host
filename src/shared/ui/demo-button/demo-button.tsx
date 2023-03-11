@@ -1,5 +1,6 @@
 import { FC, useState } from 'react'
 
+import { withRenderLog } from '@app/providers'
 import { ButtonProps, cnc } from '@shared/lib'
 
 import StyledDemoButton from './demo-button.style'
@@ -21,4 +22,4 @@ const DemoButton: FC<Props> = ({ title, ...buttonProps }) => {
   )
 }
 
-export default DemoButton
+export default withRenderLog(DemoButton)

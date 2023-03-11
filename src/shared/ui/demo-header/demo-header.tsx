@@ -1,5 +1,6 @@
 import { FC } from 'react'
 
+import { withRenderLog } from '@app/providers'
 import { cnc, DivProps } from '@shared/lib'
 
 import StyledDemoHeader from './demo-header.style'
@@ -18,4 +19,4 @@ const DemoHeader: FC<Props> = ({ title, ...divProps }) => (
   </StyledDemoHeader>
 )
 
-export default DemoHeader
+export default withRenderLog(DemoHeader)

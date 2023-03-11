@@ -3,7 +3,7 @@ import { Global } from '@emotion/react'
 
 import { cnc } from '@shared/lib'
 import { DemoButton, DemoHeader } from '@shared/ui'
-import { useEnvResolver, withProviders } from './providers'
+import { useEnvResolver, withProviders, withRenderLog } from './providers'
 
 import StyledApp from './styles/app.style'
 import GlobalStyles from './styles/global.style'
@@ -25,4 +25,4 @@ const App: FC = () => {
   )
 }
 
-export default withProviders(App)
+export default withProviders(withRenderLog(App))
