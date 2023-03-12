@@ -1,4 +1,4 @@
-import { WithRenderLog } from '@app/providers'
+import { WithRenderLog } from './render-log.model' // - don't use here import from @app/providers
 import { useRenderLog } from './use.render-log'
 
 export const withRenderLog: WithRenderLog = (Component) => {
